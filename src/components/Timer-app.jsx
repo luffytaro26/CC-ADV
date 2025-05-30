@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import Login from "./Login";
 import AMPForm from "./AMPForm";
 import * as XLSX from "xlsx";
 import iconImage from "./comcast_logo_icon_170338.png"; // icon path
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({ name: "karthick" }); // Auto-login as karthick
   const [visibleForm, setVisibleForm] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [elapsed, setElapsed] = useState(0);
@@ -119,8 +118,6 @@ export default function App() {
     XLSX.utils.book_append_sheet(wb, ws, "AMP-OE");
     XLSX.writeFile(wb, "AMP-OE-data.xlsx");
   };
-
-  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
@@ -288,3 +285,4 @@ export default function App() {
     </>
   );
 }
+
