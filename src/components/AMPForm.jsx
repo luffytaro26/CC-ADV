@@ -112,12 +112,13 @@ export default function AMPForm({ user, onSave, formRef }) {
         );
       })}
       {/* Hidden Save Button */}
-      {/* <button
+      <button
         onClick={handleSubmit}
         className="col-span-2 bg-green-600 text-white py-2 rounded mt-2 hidden"
       >
         Save AMP-OE Entry
-      </button> */}
+      </button>
     </div>
   );
 }
+
